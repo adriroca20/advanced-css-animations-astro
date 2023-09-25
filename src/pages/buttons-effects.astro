@@ -1,0 +1,34 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+import ShadowGradientButton from "../components/buttons/ShadowGradientButton.astro"
+import HamburgerToCross from "../components/buttons/HamburgerToCross.astro"
+import CallToActionV1 from "../components/buttons/CallToActionV1.astro"
+import CallToActionV2 from "../components/buttons/CallToActionV2.astro"
+---
+
+<Layout title="Cards effects">
+    <section class="card-layout">
+        <Card title="Shadow gradient">
+            <ShadowGradientButton></ShadowGradientButton>
+        </Card>
+        <Card title="Hamburguer to cross">
+            <HamburgerToCross></HamburgerToCross>
+        </Card>
+        <Card title="Call to action with arrow V1">
+            <CallToActionV1></CallToActionV1>
+        </Card>
+        <Card title="Call to action with arrow V2">
+            <CallToActionV2></CallToActionV2>
+        </Card>
+        <Card title="Dark/Light mode toggler" />
+    </section>
+</Layout>
+
+<style>
+
+</style>
+
+<script>
+
+</script>

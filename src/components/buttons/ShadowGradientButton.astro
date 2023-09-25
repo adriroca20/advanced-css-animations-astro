@@ -1,0 +1,52 @@
+---
+---
+
+    <button id="button-1">
+        Hover me!
+    </button>
+<style>
+    #button-1{
+        background: var(--bg-light);
+        padding: 20px 40px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;  
+        border: none;
+        color: var(--text-dark);
+        transition: all 0.3s ease-in-out;
+    }
+    #button-1::before{
+        content: "";
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to right, #c94b4b, #4b134f);
+        filter: blur(8px);
+        background-size: 800%;
+        border-radius: inherit;
+        animation: waves 4s infinite linear;
+        transition: all 0.2s ease-in-out;
+        z-index: -1;
+    }
+    #button-1:active{
+        padding: 17px 35px;
+    }
+    #button-1:hover::before{
+        opacity: 1;
+    }
+    @keyframes waves{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+</style>

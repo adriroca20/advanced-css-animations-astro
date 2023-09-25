@@ -1,0 +1,46 @@
+---
+const { href, title, body } = Astro.props;
+---
+
+<nav>
+    <a href="/" class="logo">QuickAnimate</a>
+    <article class="nav-links">
+        <a href="/card-effects">Cards</a>
+        <a href="/menu-effects">Menus</a>
+        <a href="/text-effects">Text</a>
+        <a href="/buttons-effects">Buttons</a>
+        <a href="/inputs">Inputs</a>
+        <a href="/layouts">Layouts</a>
+        <a href="/carousels">Carousels</a>
+        <a href="/mouse-trailers">Mouse trailers</a>
+    </article>
+</nav>
+<style>
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        padding: 0 30px;
+        background-color: var(--bg-black);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .logo{
+        color: var(--text-highlight);
+    }
+    .nav-links{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+    }
+    .nav-links a{
+        transition: color 0.3s ease-in-out;
+    }
+    .nav-links a:hover{
+        color: var(--text-highlight);
+    }
+</style>

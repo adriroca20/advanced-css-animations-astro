@@ -1,0 +1,52 @@
+<button id="button-4">
+    <p>Get started</p>
+</button>
+
+<style>
+    
+#button-4{
+    background: var(--text-highlight);
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;  
+    border: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+#button-4>p{
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+#button-4::after{
+    content: "→";
+    color: var(--text-highlight);
+    font-size: 1.5rem;
+    position: absolute;
+    right: 5%;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+#button-4:hover::after{
+    width: 90%;
+}
+#button-4:hover >p{
+    left: 35%;
+}
+</style>

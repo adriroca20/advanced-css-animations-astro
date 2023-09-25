@@ -1,0 +1,68 @@
+---
+import Navigation from "../shared/Navigation.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<Navigation />
+		</header>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--bg-black: #000000;
+		--bg-light:#f6f4f4;
+		--text-dark:#14213d;
+		--text-highlight:#fca311;
+		--text-light: rgba(255, 255, 255, 0.87);
+		--subtitle:#e5e5e5;
+		font-family: 'Bebas Neue', sans-serif;
+		font-family: 'Inclusive Sans', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+	}
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		color: var(--text-light);
+	}
+	a {
+		text-decoration: none;
+	}
+	.card-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        min-height: 100vh;
+        background-color: var(--bg-black);
+        padding: 100px 30px 0 30px;
+    }
+</style>
+<script>
+
+</script>

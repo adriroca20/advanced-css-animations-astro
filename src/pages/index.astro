@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Advanced css animations">
+    <section class="hero">
+        <article class="hero-text-container">
+            <h1>QuickAnimate</h1>
+            <h3>Get funcy animations for your website</h3>
+        </article>
+        <article>
+            <h1>Animation</h1>
+        </article>
+    </section>
+</Layout>
+
+<style>
+    .hero{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: calc(100vh);
+        background-color: var(--bg-light);
+        padding: 0 20%;
+    }
+    .hero-text-container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero-text-container h1{
+        color: var(--text-highlight);
+        font-size: 5rem;
+    }
+    .hero-text-container h3{
+        color: var(--text-dark);
+    }
+</style>
