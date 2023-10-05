@@ -1,43 +1,66 @@
 ---
-const {title} = Astro.props
+const {title, description, videoURL} = Astro.props
 ---
 <div class="card">
-    <div class="card-title">
-        <h1>{title}</h1>
+    <div class="card-video">
+        <video src={videoURL} preload="auto" autoplay loop></video>
     </div>
-    <hr>
     <div class="card-body">
-        <slot/> 
+        <h2 class="card-title">{title}</h2>
+        <p class="card-description">{description}</p>
     </div>
 </div>
 <style>
     .card {
-        background-color: var(--surface-50);
+        background-color: var(--surface);
         border-radius: 10px;
         cursor: pointer;
         border: 1px solid rgba(255, 255, 255, 0.4);
         position: relative;
-        height: 500px;
-        width: 350px;
-        padding: 30px;
+        padding: 5px;
         flex-grow: 1;
-        flex-basis: 20%;
-        box-shadow: 7px 5px 5px rgba(245, 245, 245, 0.463);
+        flex-basis: 30%;
         display: flex;
         justify-content: flex-start;
+        align-items: flex-start;
         flex-direction: column;
         gap: 10px;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    .card:hover{
+        border:2px solid  var(--text-highlight);
+    }
+    .card-video{
+        display: flex;
+        flex-basis: 50%;
+        height: 75%;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .card-video > video{
+        height: auto;
+        border-radius: 10px;
+        width: 100%;
+        object-fit: cover;
     }
     .card-title{
         height: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
+        color: var(--text-highlight);
     }
     .card-body{
-        flex-grow: 1;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        line-height: 1.8rem;
+        padding: 5px 10px;
+    }
+    .card-body > p{
+        font-weight: 300;
     }
 </style>
