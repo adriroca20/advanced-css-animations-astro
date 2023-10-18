@@ -1,18 +1,19 @@
 ---
+import NavLinks from "./NavLinks.astro";
 const { href, title, body } = Astro.props;
 ---
 
 <nav>
     <a href="/" class="logo">QuickAnimate</a>
     <article class="nav-links">
-        <a href="/card-effects">Cards</a>
-        <a href="/menu-effects">Menus</a>
-        <a href="/text-effects">Text</a>
-        <a href="/buttons-effects">Buttons</a>
-        <a href="/inputs">Inputs</a>
-        <a href="/layouts">Layouts</a>
-        <a href="/carousels">Carousels</a>
-        <a href="/mouse-trailers">Mouse trailers</a>
+        <NavLinks href="/card-effects">Cards</NavLinks>
+        <NavLinks href="/menu-effects">Menus</NavLinks>
+        <NavLinks href="/text-effects">Text</NavLinks>
+        <NavLinks href="/buttons-effects">Buttons</NavLinks>
+        <NavLinks href="/inputs">Inputs</NavLinks>
+        <NavLinks href="/layouts">Layouts</NavLinks>
+        <NavLinks href="/carousels">Carousels</NavLinks>
+        <NavLinks href="/mouse-trailers">Mouse trailers</NavLinks>
     </article>
 </nav>
 <style>
@@ -26,6 +27,8 @@ const { href, title, body } = Astro.props;
         top: 0;
         left: 0;
         width: 100%;
+        z-index: var(--index-top);
+        background-color: var(--bg-black);
     }
     nav::after{
         content: "";

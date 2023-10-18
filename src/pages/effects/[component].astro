@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro"
+const {component, name, description, code} = Astro.params
+export const getStaticPaths = (() => {
+    return [
+        {params:{component:"light-hover"}},
+        {params:{component:"full-screen-menu"}},
+        {params:{component:"split-header"}},
+        {params:{component:"twitch-card"}},
+        {params:{component:"magic-sparkles"}},
+        {params:{component:"elegant-menu"}},
+        {params:{component:"staggered-grid"}},
+        {params:{component:"smart-mouse"}},
+        {params:{component:"buttons-hover"}},
+        {params:{component:"wavy-loader"}},
+        {params:{component:"movies-gallery"}},
+        {params:{component:"fluid-flex-layout"}},
+        {params:{component:"dark-mode-toggler"}},
+        {params:{component:"filter-card"}},
+        {params:{component:"inputs-text"}},
+        {params:{component:"clamp-layout"}},
+    ];
+}) satisfies GetStaticPaths;
+---
+
+<Layout title={`Effect ${component}`}>
+    <main>
+        <h1>{component}</h1>
+    </main>
+</Layout>
+
+<style>
+    main{
+        min-height: 100vh;
+        background-color: var(--bg-black);
+        padding: 100px 10% 0 10%;
+    }
+</style>
