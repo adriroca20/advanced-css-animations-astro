@@ -1,0 +1,21 @@
+---
+import Navigation from "../shared/Navigation.astro";
+import{ type ICode }from "../Types/Code"
+interface Props {
+	name: string;
+    description: string;
+    code:ICode;
+}
+
+const { name, description,code } = Astro.props;
+---
+	<body>
+		<slot />
+	</body>
+
+<style>
+
+</style>
+<script>
+
+</script>

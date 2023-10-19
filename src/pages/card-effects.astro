@@ -1,12 +1,15 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-const lhVideo = "../public/Videos/magnetic-text.mp4"
+const lhVideo = "@media/magnetic-text.mp4"
+const buttonsEffects =  await Astro.glob("../content/effects/*.mdx")
+
 ---
 <Layout title="Cards effects">
     <section class="card-layout">
-        <Card videoURL={lhVideo} title="Light hover" componentLink="light-hover" description="A spotlight effect that follows the cursor and highlights contents on element hover. "/>
-        <Card videoURL={lhVideo} title="Light hover" description="A spotlight effect that follows the cursor and highlights contents on element hover. "/>
+        {buttonsEffects.map((button)=>{
+            return <Card card={button}></Card>
+        })}
     </section>
 </Layout>
 

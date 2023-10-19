@@ -1,5 +1,15 @@
 ---
-const {title, description, videoURL, componentLink} = Astro.props
+import {type ICard} from "@types/ICard"
+
+const {card} = Astro.props
+
+const cardData:ICard ={
+    componentLink:card.frontmatter.componentLink,
+    description:card.frontmatter.description,
+    title:card.frontmatter.title,
+    videoURL:card.frontmatter.videoURL,
+}
+const {componentLink,description,title,videoURL} = cardData
 ---
 <div class="card">
     <div class="card-video">
