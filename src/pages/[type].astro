@@ -1,0 +1,45 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+const {type} = Astro.params
+export const getStaticPaths = (() => {
+    return [
+        {params:{type:"cards"}},
+        {params:{type:"buttons"}},
+        {params:{type:"menus"}},
+        {params:{type:"twitch-card"}},
+        {params:{type:"magic-sparkles"}},
+        {params:{type:"elegant-menu"}},
+        {params:{type:"staggered-grid"}},
+        {params:{type:"smart-mouse"}},
+        {params:{type:"buttons-hover"}},
+        {params:{type:"wavy-loader"}},
+    ];
+}) satisfies GetStaticPaths;
+console.log(`../content/${type}/*.mdx`)
+
+const mdFilesLocation = `../content/${type}/*.mdx`
+const buttonsEffects =  await Astro.glob("../content/" + type + "/*.mdx")
+
+---
+<Layout title={`Effects ${type}`}>
+    <section class="card-layout">
+        {buttonsEffects.map((button)=>{
+            return <Card card={button}></Card>
+        })}
+    </section>
+</Layout>
+
+<style>
+    main{
+        min-height: 100vh;
+        background-color: var(--bg-black);
+        padding: 100px 10% 0 10%;
+    }
+</style>
+<script>
+    const {type} = Astro.params
+    const mdFilesLocation = `../content/${type}/*.mdx`
+    console.log(mdFilesLocation)
+</script>

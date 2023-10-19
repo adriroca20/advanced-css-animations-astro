@@ -2,7 +2,7 @@
 import {type ICard} from "@types/ICard"
 
 const {card} = Astro.props
-
+console.log(card)
 const cardData:ICard ={
     componentLink:card.frontmatter.componentLink,
     description:card.frontmatter.description,
