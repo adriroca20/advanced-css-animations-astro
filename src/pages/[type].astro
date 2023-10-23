@@ -8,13 +8,15 @@ export const getStaticPaths = (() => {
         {params:{type:"cards"}},
         {params:{type:"buttons"}},
         {params:{type:"menus"}},
-        {params:{type:"twitch-card"}},
-        {params:{type:"magic-sparkles"}},
-        {params:{type:"elegant-menu"}},
-        {params:{type:"staggered-grid"}},
-        {params:{type:"smart-mouse"}},
-        {params:{type:"buttons-hover"}},
-        {params:{type:"wavy-loader"}},
+        {params:{type:"carousels"}},
+        {params:{type:"effects"}},
+        {params:{type:"fullPage"}},
+        {params:{type:"inputs"}},
+        {params:{type:"layouts"}},
+        {params:{type:"loaders"}},
+        {params:{type:"menus"}},
+        {params:{type:"mouseTrailers"}},
+        {params:{type:"texts"}},
     ];
 }) satisfies GetStaticPaths;
 console.log(`../content/${type}/*.mdx`)
